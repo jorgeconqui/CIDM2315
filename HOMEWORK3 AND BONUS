@@ -1,0 +1,124 @@
+namespace Homework3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Q1: Enter a number to check if it's prime:");
+            short number = Convert.ToInt16(Console.ReadLine());
+            bool isPrime = true;
+
+            if (number <= 1)
+            {
+                isPrime = false;
+            }
+            else
+            {
+                for (short i = 2; i < number; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isPrime)
+            {
+                Console.WriteLine($"{number} is prime.");
+            }
+            else
+            {
+                Console.WriteLine($"{number} is non-prime.");
+            }
+        }
+    }
+}
+
+
+
+namespace Homework3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Q2: Enter an integer N for the square pattern:");
+            short n = Convert.ToInt16(Console.ReadLine());
+
+            for (short i = 1; i <= n; i++)
+            {
+                for (short j = 1; j <= n; j++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+namespace Homework3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Q3: Enter an integer N for the square pattern with diagonal:");
+            short m = Convert.ToInt16(Console.ReadLine());
+
+            for (short i = 1; i <= m; i++)
+            {
+                for (short j = 1; j <= m; j++)
+                {
+                    if (i == 1 || i == m || j == 1 || j == m || i == j || j == (m - i + 1))
+                    {
+                        Console.Write("* ");
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
+
+
+namespace Homework3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Bonus: Enter an integer N for the X pattern:");
+            short o = Convert.ToInt16(Console.ReadLine());
+
+            for (short i = 1; i <= o; i++)
+            {
+                for (short j = 1; j <= o; j++)
+                {
+                    if (i == j || j == (o - i + 1))
+                    {
+                        Console.Write("* ");
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
