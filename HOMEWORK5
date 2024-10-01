@@ -1,0 +1,97 @@
+namespace Homework5;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Q1_method();
+
+        Q2_method();
+
+        Q3_method();
+    }
+
+  
+    static void Q1_method()
+    {
+        Console.WriteLine("Enter the first integer:");
+        short num1 = Convert.ToInt16(Console.ReadLine());
+
+        Console.WriteLine("Enter the second integer:");
+        short num2 = Convert.ToInt16(Console.ReadLine());
+
+        int largest = GetLargest(num1, num2);
+        Console.WriteLine($"The largest number is: {largest}");
+    }
+
+    static int GetLargest(short a, short b)
+    {
+        return a > b ? a : b;
+    }
+
+
+    static void Q2_method()
+    {
+        Console.WriteLine("Enter the first integer:");
+        short num1 = Convert.ToInt16(Console.ReadLine());
+
+        Console.WriteLine("Enter the second integer:");
+        short num2 = Convert.ToInt16(Console.ReadLine());
+
+        Console.WriteLine("Enter the third integer:");
+        short num3 = Convert.ToInt16(Console.ReadLine());
+
+        Console.WriteLine("Enter the fourth integer:");
+        short num4 = Convert.ToInt16(Console.ReadLine());
+
+        int max1 = GetLargest(num1, num2);
+        int max2 = GetLargest(num3, num4);
+        int largest = GetLargest(max1, max2);
+
+        Console.WriteLine($"The largest number among four is: {largest}");
+    }
+
+    
+    static void Q3_method()
+    {
+        createAccount();
+    }
+
+    static bool checkAge(short birth_year)
+    {
+        int current_year = DateTime.Now.Year;
+        int age = current_year - birth_year;
+        return age >= 18;
+    }
+
+    static void createAccount()
+    {
+        Console.WriteLine("Enter username:");
+        string username = Console.ReadLine();
+
+        Console.WriteLine("Enter password:");
+        string password = Console.ReadLine();
+
+        Console.WriteLine("Re-enter password:");
+        string confirmPassword = Console.ReadLine();
+
+        Console.WriteLine("Enter birth year:");
+        short birthYear = Convert.ToInt16(Console.ReadLine());
+
+        if (checkAge(birthYear))
+        {
+            if (password == confirmPassword)
+            {
+                Console.WriteLine("Account is created successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Wrong password.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Could not create an account.");
+        }
+    }
+}
